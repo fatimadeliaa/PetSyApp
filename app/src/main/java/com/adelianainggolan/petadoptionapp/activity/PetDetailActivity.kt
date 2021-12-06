@@ -1,10 +1,13 @@
 package com.adelianainggolan.petadoptionapp.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.adelianainggolan.petadoptionapp.MainActivity
 import com.adelianainggolan.petadoptionapp.R
 import com.adelianainggolan.petadoptionapp.model.PetModel
 import kotlinx.android.synthetic.main.activity_detail_pet.*
+import kotlinx.android.synthetic.main.activity_edit_profile.*
 
 class PetDetailActivity : AppCompatActivity() {
     companion object {
@@ -29,6 +32,10 @@ class PetDetailActivity : AppCompatActivity() {
         tv_detail_pet_user.setText(model?.petUser)
         tv_detail_pet_user_bio.setText(model?.petUserBio)
         tv_detail_pet_desc.setText(model?.petDesc)
+
+        btn_back_from_detail.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 }
 
