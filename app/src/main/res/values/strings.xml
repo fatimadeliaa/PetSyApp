@@ -1,0 +1,166 @@
+<resources>
+    <string name="app_name">PetAdoptionApp</string>
+    <string name="lable_nav_home">Home</string>
+    <string name="lable_nav_add">Add</string>
+    <string name="lable_nav_profile">Profile</string>
+    <string name="title_home">Home</string>
+    <string name="go_to_signup">Don\'t have an account? <b>Sing Up</b></string>
+
+    <string-array name="category_pet_name">
+        <item>Anjing</item>
+        <item>Kucing</item>
+        <item>Burung</item>
+        <item>Hamster</item>
+        <item>Ikan</item>
+        <item>Anjing</item>
+        <item>Kucing</item>
+        <item>Burung</item>
+        <item>Hamster</item>
+        <item>Ikan</item>
+    </string-array>
+
+    <string-array name="category_pet_icon">
+        <item>@drawable/ic_pet_dog</item>
+        <item>@drawable/ic_pet_cat</item>
+        <item>@drawable/ic_pet_bird</item>
+        <item>@drawable/ic_pet_hamster</item>
+        <item>@drawable/ic_pet_fish</item>
+        <item>@drawable/ic_pet_dog</item>
+        <item>@drawable/ic_pet_cat</item>
+        <item>@drawable/ic_pet_bird</item>
+        <item>@drawable/ic_pet_hamster</item>
+        <item>@drawable/ic_pet_fish</item>
+    </string-array>
+
+
+    <string-array name="pet_image">
+        <item>@drawable/pet_dog_image</item>
+        <item>@drawable/pet_cat_image</item>
+        <item>@drawable/pet_bird_image</item>
+        <item>@drawable/pet_hamster_image</item>
+        <item>@drawable/pet_fish_image</item>
+        <item>@drawable/pet_dog_image</item>
+        <item>@drawable/pet_cat_image</item>
+        <item>@drawable/pet_bird_image</item>
+        <item>@drawable/pet_hamster_image</item>
+        <item>@drawable/pet_fish_image</item>
+    </string-array>
+
+    <string-array name="pet_name">
+        <item>Foxie</item>
+        <item>Hawkeye</item>
+        <item>Astra</item>
+        <item>Mumu</item>
+        <item>Nemo</item>
+        <item>Foxie</item>
+        <item>Hawkeye</item>
+        <item>Astra</item>
+        <item>Mumu</item>
+        <item>Nemo</item>
+    </string-array>
+
+    <string-array name="pet_sex">
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="pet_jenis">
+        <item>Golden Retriever</item>
+        <item>Persia</item>
+        <item>Beo</item>
+        <item>Mini Rusian</item>
+        <item>Clown Fish</item>
+        <item>Golden Retriever</item>
+        <item>Persia</item>
+        <item>Beo</item>
+        <item>Mini Rusian</item>
+        <item>Clown Fish</item>
+    </string-array>
+
+    <string-array name="pet_age">
+        <item>5 month</item>
+        <item>1 year</item>
+        <item>5 month</item>
+        <item>1 year</item>
+        <item>5 month</item>
+        <item>5 month</item>
+        <item>1 year</item>
+        <item>5 month</item>
+        <item>1 year</item>
+        <item>5 month</item>
+    </string-array>
+
+    <string-array name="pet_distance">
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+        <item>0,5 km</item>
+    </string-array>
+
+    <string-array name="pet_weight">
+        <item>5 kg</item>
+        <item>5 kg</item>
+        <item>1 kg</item>
+        <item>0,5 kg</item>
+        <item>0,5 kg</item>
+        <item>5 kg</item>
+        <item>5 kg</item>
+        <item>1 kg</item>
+        <item>0,5 kg</item>
+        <item>0,5 kg</item>
+    </string-array>
+
+    <string-array name="pet_user">
+        <item>Fatimah Adelia</item>
+        <item>Adelia Nainggolan</item>
+        <item>Nainggolan Fatimah</item>
+        <item>Nisa Jamalia</item>
+        <item>Jamalia Nurhayati</item>
+        <item>Fatimah Adelia</item>
+        <item>Adelia Nainggolan</item>
+        <item>Nainggolan Fatimah</item>
+        <item>Nisa Jamalia</item>
+        <item>Jamalia Nurhayati</item>
+    </string-array>
+
+    <string-array name="pet_user_bio">
+        <item>lovely</item>
+        <item>love cat</item>
+        <item>love dog</item>
+        <item>love fish</item>
+        <item>love you</item>
+        <item>lovely</item>
+        <item>love cat</item>
+        <item>love dog</item>
+        <item>love fish</item>
+        <item>love you</item>
+    </string-array>
+
+    <string-array name="pet_desc">
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+        <item>LoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcytLoremnocnwebvceywcgtwvetcvetvdtvetcvetwvctvectgvdctevtcvetvcvctvewcvwyevccvyewvcyt</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,162 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.adelianainggolan.petadoptionapp"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+    kapt {
+        generateStubs = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildFeatures{
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    testImplementation 'junit:junit:'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /*Retrofit*/
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.6.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    /*Rx*/
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-core:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-appcompat:3.1.0'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
+    /*Debug Tools*/
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+
+    /*Views*/
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+
+
+    implementation 'com.afollestad.material-dialogs:core:3.1.1'
+    implementation 'com.afollestad.material-dialogs:input:3.1.1'
+    implementation 'com.airbnb.android:lottie:3.1.0'
+    implementation 'androidx.paging:paging-runtime:3.0.0'
+
+    /*LiveData and ViewModels*/
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.3.1'
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.3.1'
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    /*Image*/
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    /*Fragment*/
+    implementation "androidx.navigation:navigation-fragment:2.3.5"
+    implementation "androidx.navigation:navigation-ui:2.3.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+
+    //bottom nav anm
+    implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
+
+    //buat image slider
+    implementation 'com.synnapps:carouselview:0.1.4'
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Test
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "io.mockk:mockk:1.9.3"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "com.google.truth:truth:1.0.1"
+
+    //firebase
+    implementation 'com.google.firebase:firebase-database:19.3.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.google.firebase:firebase-core:17.4.2'
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:17.2.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+
+
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.github.ornolfr:rating-view:0.1.2@aar'
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    implementation 'me.relex:circleindicator:1.2.1@aar'
+
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'me.everything:overscroll-decor-android:1.0.4'
+    implementation 'com.mindorks.android:prdownloader:0.4.0'
+    implementation 'net.the4thdimension:audio-wife:1.0.3'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.makeramen:roundedimageview:2.2.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.labo.kaji:fragmentanimations:0.1.1'
+
+}

@@ -1,0 +1,381 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_5sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_horizontal"
+            android:text="Upload Animal"
+            android:textColor="@color/mainText"
+            android:textSize="21dp" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_40sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/photo"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_250sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/pet_cat_image" />
+
+                    <ImageView
+                        android:id="@+id/editfoto"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_add"
+                        app:backgroundTint="@color/mainText" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:textColor="@color/mainText"
+                android:text="Name"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/et_upload_name_pet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:hint="Name of Your Animal"
+                    android:textColorHint="@color/mainText"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/mainText"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Animal"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/et_upload_animal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:hint="Your Animal"
+                    android:textColorHint="@color/mainText"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mainText"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Kind Of Animal"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/et_upload_jenis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:hint="Kind of Your Animal"
+                    android:textColorHint="@color/mainText"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:textColor="@color/mainText"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="Sex"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/et_upload_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:hint="Male / Female"
+                    android:textColorHint="@color/mainText"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:textColor="@color/mainText"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Description"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/et_upload_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:hint="Description Your Animal"
+                    android:textColorHint="@color/mainText"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:textColor="@color/mainText"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Age"
+                        android:textSize="12sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="@dimen/_8sdp">
+
+                        <EditText
+                            android:id="@+id/et_upload_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@color/transparent"
+                            android:hint="Age"
+                            android:textColorHint="@color/mainText"
+                            android:textSize="15sp" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:textColor="@color/mainText"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Weight"
+                        android:textSize="12sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="@dimen/_8sdp">
+
+                        <EditText
+                            android:id="@+id/et_upload_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@color/transparent"
+                            android:hint="weight"
+                            android:textColorHint="@color/mainText"
+                            android:textSize="15sp" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:textColor="@color/mainText"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="Location"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/et_upload_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@color/transparent"
+                    android:hint="Your Location"
+                    android:textColorHint="@color/mainText"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
+                android:background="@drawable/btn_round"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>
