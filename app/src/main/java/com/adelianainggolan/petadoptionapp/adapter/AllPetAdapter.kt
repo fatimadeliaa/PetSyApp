@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.adelianainggolan.petadoptionapp.R
 import com.adelianainggolan.petadoptionapp.model.PetModel
+import com.adelianainggolan.petadoptionapp.utils.setImage
 import kotlinx.android.synthetic.main.item_staggered.view.*
 
 class AllPetAdapter(private val listStaggered : ArrayList<PetModel>) : RecyclerView.Adapter<AllPetAdapter.ViewHolder>() {
@@ -24,7 +25,7 @@ class AllPetAdapter(private val listStaggered : ArrayList<PetModel>) : RecyclerV
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(model: PetModel) {
             with(itemView){
-                iv_pet_staggered.setImageResource(model.petImage)
+                iv_pet_staggered.setImage(itemView.context, model.petImage)
                 tv_pet_name_staggered.setText(model.petName)
                 tv_pet_sex_staggered.setText(model.petSex)
                 tv_pet_distance_staggered.setText(model.petDistance)

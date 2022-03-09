@@ -1,16 +1,23 @@
 package com.adelianainggolan.petadoptionapp.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
-import com.adelianainggolan.petadoptionapp.MainActivity
 import com.adelianainggolan.petadoptionapp.R
 import kotlinx.android.synthetic.main.activity_setting.*
-import kotlinx.android.synthetic.main.activity_signin.*
-import kotlinx.android.synthetic.main.fragment_profile.*
 
 class SettingActivity : AppCompatActivity() {
+
+    companion object {
+        @JvmStatic
+        fun start(context: Context) {
+            val starter = Intent(context, SettingActivity::class.java)
+            context.startActivity(starter)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
@@ -24,7 +31,7 @@ class SettingActivity : AppCompatActivity() {
         }
 
         btn_back_setting.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

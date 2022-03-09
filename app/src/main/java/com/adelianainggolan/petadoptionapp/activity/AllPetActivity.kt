@@ -1,11 +1,11 @@
 package com.adelianainggolan.petadoptionapp.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.adelianainggolan.petadoptionapp.MainActivity
 import com.adelianainggolan.petadoptionapp.R
 import com.adelianainggolan.petadoptionapp.adapter.AllPetAdapter
 import com.adelianainggolan.petadoptionapp.model.PetModel
@@ -13,6 +13,14 @@ import kotlinx.android.synthetic.main.activity_all_pet.*
 
 class AllPetActivity : AppCompatActivity() {
     private val listPet = ArrayList<PetModel>()
+
+    companion object {
+        @JvmStatic
+        fun start(context: Context) {
+            val starter = Intent(context, AllPetActivity::class.java)
+            context.startActivity(starter)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +32,7 @@ class AllPetActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         iv_back_all.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 

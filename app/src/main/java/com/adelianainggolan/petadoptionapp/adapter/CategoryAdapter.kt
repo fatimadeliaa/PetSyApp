@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.adelianainggolan.petadoptionapp.R
 import com.adelianainggolan.petadoptionapp.model.CategoryPetModel
+import com.adelianainggolan.petadoptionapp.utils.setImage
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.item_cat_pet.view.*
@@ -14,7 +15,7 @@ class CategoryAdapter(private  val listCategoryPetModel: ArrayList<CategoryPetMo
     inner  class CategoryViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         fun bind(categoryPetModel: CategoryPetModel) {
             with(itemView) {
-                Glide.with(itemView.context).load(categoryPetModel.petIcon).apply(RequestOptions()).into(iv_pet_category)
+                iv_pet_category.setImage(itemView.context, categoryPetModel.petIcon)
                 tv_pet_category.text = categoryPetModel.petCategory
             }
         }

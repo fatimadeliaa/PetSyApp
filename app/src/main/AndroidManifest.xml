@@ -13,7 +13,7 @@
             android:name=".activity.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.VerifikasiActivity"
+            android:name=".activity.VerificationActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ForgetActivity"
@@ -37,7 +37,7 @@
             android:name=".activity.PetDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true" />
         <activity
             android:name=".activity.SplashActivity"

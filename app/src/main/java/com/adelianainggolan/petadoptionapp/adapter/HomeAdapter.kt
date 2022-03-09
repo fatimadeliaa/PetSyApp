@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.adelianainggolan.petadoptionapp.R
 import com.adelianainggolan.petadoptionapp.model.PetModel
+import com.adelianainggolan.petadoptionapp.utils.setImage
 import kotlinx.android.synthetic.main.item_pet.view.*
 
 class HomeAdapter(private val listener: (PetModel) -> Unit) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
@@ -20,7 +21,7 @@ class HomeAdapter(private val listener: (PetModel) -> Unit) : RecyclerView.Adapt
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(model: PetModel, modelHome: (PetModel) -> Unit) {
             with(itemView) {
-                iv_pet_item.setImageResource(model.petImage)
+                iv_pet_item.setImage(itemView.context, model.petImage)
                 tv_pet_name_item.setText(model.petName)
                 tv_pet_sex_item.setText(model.petSex)
                 tv_pet_distance_item.setText(model.petDistance)

@@ -1,7 +1,6 @@
 package com.adelianainggolan.petadoptionapp.fragment
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,35 +21,30 @@ import java.util.ArrayList
 import com.adelianainggolan.petadotionapp.adapter.HomeAdapter
 
 class HomeFragment : Fragment() {
-    private val model = ArrayList<PetModel>()
-    private val modelCatPet = ArrayList<CategoryPetModel>()
-    private lateinit var homeAdapter : HomeAdapter
-//    private lateinit var categoryAdapter: CategoryAdapter
 
+    private val pets = ArrayList<PetModel>()
+    private val catPets = ArrayList<CategoryPetModel>()
+    private lateinit var viewPager: ViewPager
+    private lateinit var homeAdapter : HomeAdapter
+    private lateinit var imageSliderAdapter: ImageSliderAdapter
+    private lateinit var categoryAdapter: CategoryAdapter
 
     companion object {
-        fun newInstance() : HomeFragment {
-            val fragment = HomeFragment()
-            val bundle = Bundle()
-            fragment.arguments = bundle
-            return fragment
-        }
+        @JvmStatic
+        fun newInstance() =
+            HomeFragment().apply {
+                arguments = Bundle().apply {  }
+            }
     }
 
-    // creating object of ViewPager
-    var mViewPager: ViewPager? = null
+    private val images: IntArray by lazy {
+        intArrayOf(
+            R.drawable.pet_cat_image, R.drawable.pet_dog_image, R.drawable.pet_bird_image, R.drawable.pet_hamster_image,
+            R.drawable.pet_fish_image
+        )
+    }
 
-    // images array
-    var images = intArrayOf(
-        R.drawable.pet_cat_image, R.drawable.pet_dog_image, R.drawable.pet_bird_image, R.drawable.pet_hamster_image,
-        R.drawable.pet_fish_image
-    )
-
-    // Creating Object of ViewPagerAdapter
-    var mImageSliderAdapter: ImageSliderAdapter? = null
-
-
-    override fun onCreateView(
+    override fun onCreateView( // saat tampilan dibuat
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -59,48 +53,40 @@ class HomeFragment : Fragment() {
     }
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // saat tampilan telah dibuat
         super.onViewCreated(view, savedInstanceState)
-        // Initializing the ViewPager Object
-        mViewPager = vp_home_slider as ViewPager
+        viewPager = vp_home_slider
+        pets.addAll(getListPet())
+        catPets.addAll(getListPetCat())
 
-        // Initializing the ViewPagerAdapter
-        mImageSliderAdapter = ImageSliderAdapter(requireContext(), images)
-
-        // Adding the Adapter to the ViewPager
-        mViewPager!!.adapter = mImageSliderAdapter
-
-        model.addAll(getListPet())
-        rv_pet_general.setHasFixedSize(true)
-
-        modelCatPet.addAll(getListPetCat())
-        rv_pet_category.setHasFixedSize(true)
-
+        showPetSlider()
         showPetList()
         showPetCategoryList()
 
         tv_showall.setOnClickListener {
-            val intent = Intent(context, AllPetActivity::class.java)
-            startActivity(intent)
+            AllPetActivity.start(requireContext())
         }
 
         iv_setting.setOnClickListener {
-            val intent = Intent(context, SettingActivity::class.java)
-            startActivity(intent)
+            SettingActivity.start(requireContext())
         }
+    }
 
-
+    private fun showPetSlider() {
+        imageSliderAdapter = ImageSliderAdapter(requireContext(), images)
+        viewPager.adapter = imageSliderAdapter
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun showPetCategoryList() {
-
-        rv_pet_category.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val categoryAdapter = CategoryAdapter(modelCatPet)
+        categoryAdapter = CategoryAdapter(catPets)
+        categoryAdapter.notifyDataSetChanged()
         rv_pet_category.adapter = categoryAdapter
-//        rv_pet_category.setHasFixedSize(true)
+        rv_pet_category.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        rv_pet_category.setHasFixedSize(true)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun showPetList() {
         homeAdapter = HomeAdapter { showDetails(it) }
         homeAdapter.notifyDataSetChanged()
@@ -111,9 +97,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun showDetails(it: PetModel) {
-        val intent = Intent(context, PetDetailActivity::class.java)
-        intent.putExtra(PetDetailActivity.KEY_ALL_PET, it)
-        startActivity(intent)
+        PetDetailActivity.start(requireContext(), it)
     }
 
 
@@ -135,16 +119,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun getListPet(): ArrayList<PetModel> {
-        var petImage = resources.obtainTypedArray(R.array.pet_image)
-        var petName = resources.getStringArray(R.array.pet_name)
-        var petSex = resources.getStringArray(R.array.pet_sex)
-        var petJenis = resources.getStringArray(R.array.pet_jenis)
-        var petAge = resources.getStringArray(R.array.pet_age)
-        var petDistance = resources.getStringArray(R.array.pet_distance)
-        var petWeight = resources.getStringArray(R.array.pet_weight)
-        var petUser = resources.getStringArray(R.array.pet_user)
-        var petUserBio = resources.getStringArray(R.array.pet_user_bio)
-        var petDesc = resources.getStringArray(R.array.pet_desc)
+        val petImage = resources.obtainTypedArray(R.array.pet_image)
+        val petName = resources.getStringArray(R.array.pet_name)
+        val petSex = resources.getStringArray(R.array.pet_sex)
+        val petJenis = resources.getStringArray(R.array.pet_jenis)
+        val petAge = resources.getStringArray(R.array.pet_age)
+        val petDistance = resources.getStringArray(R.array.pet_distance)
+        val petWeight = resources.getStringArray(R.array.pet_weight)
+        val petUser = resources.getStringArray(R.array.pet_user)
+        val petUserBio = resources.getStringArray(R.array.pet_user_bio)
+        val petDesc = resources.getStringArray(R.array.pet_desc)
 
         val model = ArrayList<PetModel>()
 
